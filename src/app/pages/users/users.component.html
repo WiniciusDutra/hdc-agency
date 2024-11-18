@@ -1,6 +1,13 @@
 <ul>
-
-    <li *ngFor="let user of listaUsuarios">
-        <button [routerLink]="'/users/' + user" class="btn btn-outline-primary">{{user}}</button>
-    </li>
+  <li *ngFor="let user of listaUsuarios">
+    <button
+      [routerLink]="'/users/details'"
+      [queryParams]="{
+        userName: user
+      }"
+      class="btn btn-outline-primary"
+    >
+      {{ user }}
+    </button>
+  </li>
 </ul>
