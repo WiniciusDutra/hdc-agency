@@ -1,0 +1,41 @@
+div.card{
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 0px) {
+
+    div.card p{
+        
+        font-size: smaller;
+    }
+
+ }
+
+ @media (min-width: 576px) {
+
+    div.card p{
+
+        font-size: small;
+    }
+
+ }
+
+ @media (min-width: 768px) {
+
+    div.card p{
+        
+        font-size: medium;
+    }
+
+ }
+
+ @media (min-width: 992px) {
+
+    div.card p{
+        
+        font-size: larger;
+    }
+
+ }
