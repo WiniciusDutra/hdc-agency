@@ -13,6 +13,8 @@ export class UsersComponent {
 
   //listaUsuarios: string[] = ['Vinicius', 'Simone', 'Malú', 'Olaf', 'Catarina']
 
+  usuarioSelecionado : User | undefined;
+
   usersList: User[] = 
   [
     { name: 'Vinícius', age: 36},
@@ -23,5 +25,9 @@ export class UsersComponent {
     { name: 'Orácio', age: .1}
     
   ]
+
+  infoUserSelecionado(user:User){
+    this.usuarioSelecionado = user
+  }
 
 }

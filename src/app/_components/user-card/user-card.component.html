@@ -1,6 +1,11 @@
 <div class="card">
-  <div class="card-header"><p>{{user.name}}</p></div>
+  <div class="card-header">
+    <p>{{ user.name }}</p>
+  </div>
   <div class="card-body">
-    <p><b>idade: </b>{{user.age}}</p>
+    <p><b>idade: </b>{{ user.age }}</p>
+    <button (click)="enviarDados()" class="btn btn-outline-primary">
+      Enviar dados
+    </button>
   </div>
 </div>

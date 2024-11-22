@@ -6,7 +6,7 @@ div.card{
 
 @media (min-width: 0px) {
 
-    div.card p{
+    div.card p, button{
         
         font-size: smaller;
     }
@@ -15,7 +15,7 @@ div.card{
 
  @media (min-width: 576px) {
 
-    div.card p{
+    div.card p, button{
 
         font-size: small;
     }
@@ -24,7 +24,7 @@ div.card{
 
  @media (min-width: 768px) {
 
-    div.card p{
+    div.card p, button{
         
         font-size: medium;
     }
@@ -33,7 +33,7 @@ div.card{
 
  @media (min-width: 992px) {
 
-    div.card p{
+    div.card p, button{
         
         font-size: larger;
     }
