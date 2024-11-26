@@ -3,3 +3,8 @@ form{
 
     justify-content: center;
 }
+
+#card-container{
+    
+    padding: 0 20px;
+}

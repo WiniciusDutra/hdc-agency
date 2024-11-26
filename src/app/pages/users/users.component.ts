@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
 
   submit() {
     if (this.userForm.valid) {
-      console.log(this.userForm.value);
+      this.usersList.push(this.userForm.value)
     }
   }
 
@@ -25,8 +25,8 @@ export class UsersComponent implements OnInit {
 
   initializeForm() {
     this.userForm = this.fb.group({
-      nome: ['', [Validators.required, Validators.maxLength(250)]],
-      idade: [
+      name: ['', [Validators.required, Validators.maxLength(250)]],
+      age: [
         '',
         [Validators.required, Validators.min(13), Validators.max(120)],
       ],
