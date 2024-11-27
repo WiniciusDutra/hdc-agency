@@ -1,28 +1,46 @@
 <div id="card-container">
-  <form [formGroup]="userForm">
-    <div>
-      <div class="form-group col-12">
+  <form [formGroup]="userForm" class="mb-3">
+    <div class="row">
+      <div class="form-group col-md-8">
         <label for="name">nome</label>
         <input
           id="name"
           type="text"
           class="form-control"
+          [class.is-invalid]="userForm.get('name')?.errors && userForm.get('name')?.touched"
+          [class.is-valid]="userForm.get('name')?.valid"
           formControlName="name"
         />
+        <div *ngIf="userForm.get('name')?.hasError('required')" class="invalid-feedback">nome não pode ser vazio</div>
+        <div *ngIf="userForm.get('name')?.hasError('maxlength')" class="invalid-feedback">nome não pode ter mais que 250 caracteres</div>
+        <div class="valid-feedback">isso!</div>
       </div>
+      
+      
 
-      <div class="form-group col-4">
+      <div class="form-group  col-md-8">
         <label for="age">idade</label>
         <input
           id="age"
           type="number"
           class="form-control"
+          [class.is-invalid]="userForm.get('age')?.errors && userForm.get('age')?.touched"
+          [class.is-valid]="userForm.get('age')?.valid "
           formControlName="age"
         />
+        <div *ngIf="userForm.get('age')?.hasError('required')" class="invalid-feedback">a idade deve ser preenchida</div>
+        <div *ngIf="userForm.get('age')?.hasError('min') || userForm.get('age')?.hasError('max') " class="invalid-feedback" >a idade não pode ser menor que 13</div>
+        <div class="valid-feedback">
+          isso!
+        </div>
+    
       </div>
+      
 
-      <div class="form-group col-6">
-        <button (click)="submit()" class="btn btn-outline-primary form-control">
+      <div class="form-group  col-md-8 mt-5">
+        <button
+        [disabled]="userForm.invalid"
+         (click)="submit()" class="btn btn-outline-primary form-control">
           enviar
         </button>
       </div>
