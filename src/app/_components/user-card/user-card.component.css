@@ -24,7 +24,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -32,7 +32,7 @@
 .user-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  border-color: #667eea;
+  border-color: var(--gradient-start);
 }
 
 .user-card:hover::before {
@@ -43,7 +43,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,18 +93,18 @@
 
 .user-card:hover .info-badge {
   background: #e7f3ff;
-  color: #667eea;
-  border-color: #667eea;
+  color: var(--gradient-start);
+  border-color: var(--gradient-start);
 }
 
 .info-badge svg {
-  color: #667eea;
+  color: var(--gradient-start);
 }
 
 .card-action-btn {
   width: 100%;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   color: white;
   border: none;
   border-radius: 10px;

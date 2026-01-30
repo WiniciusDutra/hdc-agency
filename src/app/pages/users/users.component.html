@@ -30,14 +30,14 @@
               [class.is-valid]="userForm.get('name')?.valid && userForm.get('name')?.touched"
               formControlName="name"
             />
-            <div *ngIf="userForm.get('name')?.hasError('required') && userForm.get('name')?.touched" class="invalid-feedback">
-              ⚠️ O nome é obrigatório
+            <div *ngIf="userForm.get('name')?.hasError('required') && userForm.get('name')?.touched" class="invalid-feedback" role="alert">
+              <span aria-hidden="true">⚠️</span> O nome é obrigatório
             </div>
-            <div *ngIf="userForm.get('name')?.hasError('maxlength') && userForm.get('name')?.touched" class="invalid-feedback">
-              ⚠️ O nome não pode ter mais de 250 caracteres
+            <div *ngIf="userForm.get('name')?.hasError('maxlength') && userForm.get('name')?.touched" class="invalid-feedback" role="alert">
+              <span aria-hidden="true">⚠️</span> O nome não pode ter mais de 250 caracteres
             </div>
-            <div *ngIf="userForm.get('name')?.valid && userForm.get('name')?.touched" class="valid-feedback">
-              ✓ Perfeito!
+            <div *ngIf="userForm.get('name')?.valid && userForm.get('name')?.touched" class="valid-feedback" role="status">
+              <span aria-hidden="true">✓</span> Perfeito!
             </div>
           </div>
 
@@ -55,14 +55,14 @@
               [class.is-valid]="userForm.get('age')?.valid && userForm.get('age')?.touched"
               formControlName="age"
             />
-            <div *ngIf="userForm.get('age')?.hasError('required') && userForm.get('age')?.touched" class="invalid-feedback">
-              ⚠️ A idade é obrigatória
+            <div *ngIf="userForm.get('age')?.hasError('required') && userForm.get('age')?.touched" class="invalid-feedback" role="alert">
+              <span aria-hidden="true">⚠️</span> A idade é obrigatória
             </div>
-            <div *ngIf="(userForm.get('age')?.hasError('min') || userForm.get('age')?.hasError('max')) && userForm.get('age')?.touched" class="invalid-feedback">
-              ⚠️ A idade deve ser no mínimo 13 anos
+            <div *ngIf="(userForm.get('age')?.hasError('min') || userForm.get('age')?.hasError('max')) && userForm.get('age')?.touched" class="invalid-feedback" role="alert">
+              <span aria-hidden="true">⚠️</span> A idade deve ser no mínimo 13 anos
             </div>
-            <div *ngIf="userForm.get('age')?.valid && userForm.get('age')?.touched" class="valid-feedback">
-              ✓ Idade válida!
+            <div *ngIf="userForm.get('age')?.valid && userForm.get('age')?.touched" class="valid-feedback" role="status">
+              <span aria-hidden="true">✓</span> Idade válida!
             </div>
           </div>
         </div>
@@ -72,9 +72,10 @@
           (click)="submit()"
           class="btn btn-primary btn-submit"
           [class.btn-disabled]="userForm.invalid"
+          [attr.aria-label]="userForm.invalid ? 'Preencha todos os campos obrigatórios para adicionar usuário' : 'Adicionar novo usuário'"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 8L10 14L4 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
           {{ userForm.invalid ? 'Preencha todos os campos' : 'Adicionar Usuário' }}
         </button>

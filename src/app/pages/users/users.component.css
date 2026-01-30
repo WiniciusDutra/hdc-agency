@@ -63,7 +63,7 @@
 }
 
 .form-title svg {
-  color: #667eea;
+  color: var(--gradient-start);
 }
 
 .form-row {
@@ -104,7 +104,7 @@
 
 .form-control:focus {
   background-color: white;
-  border-color: #667eea;
+  border-color: var(--gradient-start);
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
   outline: none;
 }
@@ -148,7 +148,7 @@
   font-size: 1.125rem;
   font-weight: 600;
   border-radius: 10px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   border: none;
   color: white;
   display: flex;
@@ -208,7 +208,7 @@
 }
 
 .info-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
@@ -241,7 +241,6 @@
   background: rgba(255, 255, 255, 0.15);
   padding: 1rem 1.5rem;
   border-radius: 10px;
-  backdrop-filter: blur(10px);
 }
 
 .info-label {
